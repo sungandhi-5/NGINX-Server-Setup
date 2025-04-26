@@ -34,6 +34,10 @@ sudo apt install nodejs -y
 node --version
 ```
 
+
+
+
+
 ## Installing nodejs using NVM
 - NVM is the Node Version Manager, which allows you install multiple versions of Node.js and bounce between them depending on the project.
 

@@ -82,3 +82,53 @@ sudo systemctl stop mongod
 ```
 sudo systemctl restart mongod
 ```
+## Add Authentication to Database
+
+```
+mongosh
+```
+```
+use admin
+```
+- Create a New Admin User with Password
+
+```
+db.createUser({
+  user: "admin",
+  pwd: "yourStrongPassword",
+  roles: [ { role: "root", db: "admin" } ]
+});
+```
+Here,
+- user: "admin" , Username.
+- pwd: "yourStrongPassword" -> Password you want.
+- role: "root" -> Full permission over all databases.
+- db: "admin" -> Role is assigned inside the admin database.
+
+- If you create user for specific database with only read,write permission then use below command :
+
+```
+db.createUser({
+  user: "myUsername",
+  pwd: "myPassword",
+  roles: [
+    { role: "readWrite", db: "yourDatabaseName" }
+  ]
+});
+```
+
+- Enable Authentication in mongod.conf
+``` 
+sudo nano /etc/mongod.conf
+```
+- Uncomment **security:** key and add line like below :
+
+```
+security:
+  authorization: "enabled"
+```
+
+- Restart mongodb
+```
+sudo systemctl restart mongod
+```

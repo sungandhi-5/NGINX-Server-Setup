@@ -1,8 +1,7 @@
 ## 1. Before Installing Nodejs, Update and Upgrade your ubuntu system
 
 ```
-sudo apt update
-sudo apt upgrade
+sudo apt update && sudo apt upgrade -y
 ```
 ## 2. Install necessary dependencies
 
@@ -24,8 +23,7 @@ echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.co
 ## 5. Update and install
 With the source repository added, we’re ready to install the package. First, we need to run another update to sync the package list, then we can proceed with installing Node.js 22:
 ```
-sudo apt update
-sudo apt install nodejs -y
+sudo apt update && sudo apt install nodejs -y
 ```
 
 ## 6. Check the version

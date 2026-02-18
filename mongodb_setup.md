@@ -3,12 +3,7 @@
 ```
 sudo apt-get update -y
 ```
-## 2. Check Linux Version
-
-```
-cat /etc/lsb-release
-```
-## 3. Import The Public Key.
+## 2. Import The Public Key.
 From a terminal, install gnupg and curl if they are not already available:
 ```
 sudo apt-get install gnupg curl
@@ -18,6 +13,11 @@ To import the MongoDB public GPG key, run the following command:
 curl -fsSL https://www.mongodb.org/static/pgp/server-8.0.asc | \
    sudo gpg -o /usr/share/keyrings/mongodb-server-8.0.gpg \
    --dearmor
+```
+## 3. Check Linux Version
+
+```
+cat /etc/lsb-release
 ```
 ## 4. Create The List File.
 Create the list file /etc/apt/sources.list.d/mongodb-org-8.0.list for your version of Ubuntu.

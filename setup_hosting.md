@@ -13,13 +13,7 @@ sudo chmod -R 755 /usr/share/nginx/<PROJECT_NAME>
 
 2. Create site configuration file
 
-- First, remove default configuration file to avoid conflicts
-
-```
-sudo rm /etc/nginx/sites-available/default
-```
-
-- Now create your site's configuration file
+- create your site's configuration file
 
 ```
 sudo nano /etc/nginx/sites-available/<DOMAIN_NAME>.conf
